@@ -1,0 +1,210 @@
+:root {
+    --backgroundMain: hsl(222, 26%, 31%);
+    --backgroundKeyboard: hsl(223, 31%, 20%);
+    --backgroundScreen: hsl(224, 36%, 15%);
+
+    --resetDelButtonsBackground: hsl(225, 21%, 49%);
+    --resetDelButtonsShadow: hsl(224, 28%, 35%);
+
+    --equalKeyBackground: hsl(6, 63%, 50%);
+    --equalKeyShadow: hsl(6, 70%, 34%);
+
+    --defButton: hsl(30, 25%, 89%);
+    --defButtonShadow: hsl(28, 16%, 65%);
+
+    --textPrimary: hsl(221, 14%, 31%);
+    --textSecondary: rgb(255, 255, 255);
+    --textTertiary: rgb(255, 255, 255);
+
+    --primaryFontSize: 32px;
+
+    --animation-time: 0.2s;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+body {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    background-color: var(--backgroundMain);
+}
+
+.attribution { 
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(224, 36%, 15%); 
+}
+
+.calculator__wrapper {
+    position: absolute;
+    transform: translate(-50%, -50%) scale(1);
+    left: 50%;
+    top: 50%;
+    height: 750px;
+    width: 600px;
+    
+}
+.calculator__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+}
+
+.logo {
+    font-size: var(--primaryFontSize);
+    color: var(--textTertiary);
+    transition: var(--animation-time);
+    letter-spacing: 2px;
+}
+
+
+.toggleMode__slider-input {
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--backgroundKeyboard);
+    transition: var(--animation-time);
+    border-radius: 15px;
+    height: 26px;
+    padding: 4px;
+    width: 70px;
+}
+.toggleMode__slider-input::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--equalKeyBackground);
+    transition: var(--animation-time);
+    line-height: 26px;
+}
+
+.slider__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+.toggleMode__slider-title {
+    margin-right: 5px;
+    letter-spacing: 2px;
+    font-size: 11px;
+    color: var(--textSecondary);
+    transition: var(--animation-time);
+}
+.toggleMode__number:nth-child(1),
+.toggleMode__number:nth-child(2),
+.toggleMode__number:nth-child(3) {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: -40%;
+    font-size: 13px;
+    color: var(--textSecondary);
+    transition: var(--animation-time);
+}
+.toggleMode__number:nth-child(1) {
+    left: 56%;
+}
+.toggleMode__number:nth-child(2) {
+    left: 73%;
+    
+}
+.toggleMode__number:nth-child(3) {
+   left: 90%;
+
+}
+.calculator__main {
+    display: flex;
+    /* flex-direction: -reverse; */
+    flex-direction: column;
+    align-items: flex-end;
+    height: inherit;
+}
+.calculator__screen {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 10px 30px;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--backgroundScreen);
+    transition: var(--animation-time);
+    height: 15%;
+    min-width: 100%;
+    border-radius: 15px;
+    width: fit-content;
+    color: var(--textTertiary);
+    font-size: 56px;
+}
+.calculator__keyboard {
+    background-color: var(--backgroundKeyboard);
+    transition: var(--animation-time);
+    border-radius: 15px;
+    padding: 20px;
+    height: 75%;
+    margin-top: 20px;
+}
+.calculator__keyboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.keyboard__button {
+    width: 120px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--defButton);
+    transition: var(--animation-time);
+    border: none;
+    height: 70px;
+    font-size: 24px;
+    font-family: 700;
+    color: var(--textPrimary);
+    box-shadow:  var(--defButtonShadow) 0px 5px 0px 0px;
+}
+.big {
+    flex-grow: 1;
+    margin: 10px;
+}
+.del, .reset {
+    color: var(--textSecondary);
+    transition: var(--animation-time);
+    background-color: var(--resetDelButtonsBackground);
+    box-shadow:  var(--resetDelButtonsShadow) 0px 5px 0px 0px;
+
+}
+.equal {
+    background-color: var(--equalKeyBackground);
+    box-shadow:  var(--equalKeyShadow) 0px 5px 0px 0px;
+    color: var(--textSecondary);
+}
+.calculator__operation {
+    color: wheat;
+    font-size: 30px;
+    color: var(--textTertiary);
+    background-color: var(--backgroundScreen);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+@media (max-width: 762px) {
+    .calculator__wrapper {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+}

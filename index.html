@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Calculator app</title>
+
+
+</head>
+<body>
+  <div class="calculator__wrapper">
+    <header class="calculator__header">
+      <div class="logo">calc</div>
+      <div class="toggleMode__wrapper">
+        <div class="slider__wrapper">
+          <span class="toggleMode__number">1</span>
+          <span class="toggleMode__number">2</span>
+          <span class="toggleMode__number">3</span>
+          <span class="toggleMode__slider-title">THEME</span>
+          <input value="0" class="toggleMode__slider-input" type="range" min="0" max="2">
+        </div>
+      </div>
+    </header>
+    <main class="calculator__main">
+      <div class="calculator__operation"></div>
+      <div class="calculator__screen">
+      </div>
+      <div class="calculator__keyboard">
+        <button class="keyboard__button">7</button>
+        <button class="keyboard__button">8</button>
+        <button class="keyboard__button">9</button>
+        <button class="keyboard__button del">DEL</button>
+        <button class="keyboard__button">4</button>
+        <button class="keyboard__button">5</button>
+        <button class="keyboard__button">6</button>
+        <button class="keyboard__button">+</button>
+        <button class="keyboard__button">1</button>
+        <button class="keyboard__button">2</button>
+        <button class="keyboard__button">3</button>
+        <button class="keyboard__button">-</button>
+        <button class="keyboard__button">.</button>
+        <button class="keyboard__button">0</button>
+        <button class="keyboard__button">/</button>
+        <button class="keyboard__button">x</button>
+        <button class="keyboard__button big reset">RESET</button>
+        <button class="keyboard__button big equal">=</button>
+      </div>
+    </main>
+  </div>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a target="_blank" href="https://github.com/kapip1">kapip1</a>.
+  </div>
+  <script src="./Calculator.js" type="module"></script>
+</body>
+</html>
