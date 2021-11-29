@@ -68,6 +68,12 @@ class Calculator {
     }
 
     #updateScreen() {
+        if (this.#operationString === 'Infinity') {
+            this.#htmlElements.screen.textContent = "can't be divided by 0";
+            this.#htmlElements.screen.style.fontSize = '26px';
+            return;
+        }
+        this.#htmlElements.screen.style.fontSize = '56px';
         this.#htmlElements.screen.textContent = this.#operationString;
     }
     #updateOperation(key) {
@@ -113,6 +119,12 @@ class Calculator {
     }
     #handleEqual() {
         let total = eval(this.#operationArray.join(''));
+
+        if (total === Infinity || isNaN(total)) {
+            alert('this action cannot be performed');
+            total = 0;
+        }
+
         this.#operationString = '';
         this.#operationArray.length = 0;
         this.#updateOperation(total);
